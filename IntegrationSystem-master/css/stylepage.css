@@ -1,0 +1,276 @@
+
+/*Wrapper Section*/
+
+.wrapper{
+    
+    width: 75%;
+    height: 75%;
+    min-height: 700px;
+    margin:130px auto;
+    background: #fff;
+    padding: 25px 30px 0px 30px;
+    border-radius: 5px;
+}
+.wrapper header{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.wrapper nav{
+    position: relative;
+    height: 50px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+   
+}
+
+.wrapper nav label{
+    display: inline-block;
+    height: 100%;
+    width: 75%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    color: #17a2b8;
+    font-size: 17px;
+    position: relative;
+    z-index: 1;
+}
+#patient:checked ~nav label.patient,
+#camera:checked ~nav label.camera,
+#stretcher:checked ~nav label.stretcher,
+#doctor:checked ~nav label.doctor,
+#setting:checked ~nav label.setting
+{
+color: #fff;
+}
+input[type="radio"]{
+    display: none;
+}
+.wrapper nav label i{
+    padding-right: 7px;
+}
+.wrapper nav .slider{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    background: #17a2b8;
+    border-radius: 5px;
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+}
+
+#camera:checked ~ nav .slider{
+    left:20%;
+}
+#stretcher:checked ~ nav .slider{
+    left:40%;
+}
+#doctor:checked ~ nav .slider{
+    left:60%;
+}
+
+#setting:checked ~ nav .slider{
+    left:80%;
+}
+section{
+    width: 100%;
+    height: 100%;
+}
+#patient:checked ~ section .content-1,
+#camera:checked ~ section .content-2,
+#stretcher:checked ~ section .content-3,
+#stretcher:checked ~ section .content-4{
+   display: block; 
+}
+section .content .title,.content-2{
+    font-size: 21px;
+    font-weight: 500;
+    margin:30px 0 10px 0;
+}
+section .content{
+    display: none;
+}
+
+/*Camera Section*/
+
+
+.content-2{
+    width: 100%;
+    height: 25vw;
+    overflow: hidden;
+    background: saddlebrown;
+    border-radius: 5px;
+
+}
+
+.content-2 .container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.content-2 .container .camera{
+    border-radius: 5px;
+    margin: 5px 0 0 0;
+    padding: 0 10px 0 10px;
+}
+.content-2 .container .cameras-container label{
+    cursor: pointer;
+    width: 100%;
+}
+.content-2 .container .camera:hover{
+    background: chartreuse;
+}
+.content-2 .container .camera_screen{
+    display: flex;
+    width: 66.5%;
+    background: red;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+
+}
+.content-2 .container .cameras-container{
+    width: 33.5%;
+    display: inline-block;
+    justify-items: flex-start;
+    background-color: grey;
+}
+.content-2 .container .cameras-container .camera_menu{
+
+    height: 33%;
+}
+.content-2 .container .cameras-container .camera_menu p{
+    display: inline;
+}
+
+.content-2 .container .cameras-container .arrows-controller{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-2 .container .cameras-container .arrows-controller .arrows-container{
+   
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px 20px 20px 20px;
+
+}
+
+/*    Arrows    */
+.arrow{
+    
+    width: 2rem;
+    height:2rem;
+    transition: .5s;
+    float: left;
+    cursor: pointer;
+    background-color: blueviolet;
+}
+
+
+
+.content-2 .container .horizontal{
+
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.content-2 .container .vertical{
+    display: flex;
+    justify-content: center;
+}
+
+.left{
+
+    transform: rotate(135deg);
+}
+.up{
+    
+    transform: rotate(225deg);
+}
+.right{
+    
+    transform: rotate(315deg);
+}
+.down{
+  
+    transform: rotate(45deg);
+}
+#camera-1:checked ~ div .camera_screen{
+    background-color: burlywood;
+}
+#camera-2:checked ~ div .camera_screen{
+    background-color: cyan;
+}
+#camera-3:checked ~ div .camera_screen
+{
+    background-color: chartreuse;
+}
+#camera-1:checked ~ div .screen-1,
+#camera-2:checked ~ div .screen-2,
+#camera-3:checked ~ div .screen-3
+{
+    display: inline-block;
+}
+
+#camera-1:checked ~ div .camera-div-1,
+#camera-2:checked ~ div .camera-div-2,
+#camera-3:checked ~ div .camera-div-3
+{
+    color: #fff;
+    background: black;
+}
+.screen{
+    display: none;
+}
+/* Kamera ve kamera butonları*/
+#camera-1:checked ~ div .camera-1-button,
+#camera-2:checked ~ div .camera-2-button,
+#camera-3:checked ~ div .camera-3-button{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+video{
+    width: 100%;
+    height: 100%;
+}
+.camera-button{
+    display: none;
+}
+
+.recCapture{
+    display: flex;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.reddot{
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: none;
+}
+.camerablock{
+    display: inline-block;
+}
+.camera label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
